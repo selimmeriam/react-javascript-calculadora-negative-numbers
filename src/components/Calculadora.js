@@ -20,7 +20,7 @@ export default function Calculadora() {
     setCompute('');
     setFormula('0');
     setSign('pos');
-    console.log('Formula Cleared');
+    //console.log('Formula Cleared');
    }
 
 
@@ -40,7 +40,7 @@ export default function Calculadora() {
         case('0'):case('1'):case('2'):case('3'):case('4'):case('5'):case('6'):case('7'):case('8'):case('9'):case('.'):
           currentVal=e.target.value; 
           setCurrentVal(currentVal);
-          console.log(currentVal,formula);
+          //console.log(currentVal,formula);
           appendNumber();
           break;
 
@@ -55,7 +55,7 @@ export default function Calculadora() {
      if(formula === '0'){
       formula= formula.replace(/\b0+/g, "");
       setFormula(formula);
-      //console.log('55555555',formula)
+      //console.log('not begin with 0 any more',formula)
      }
      if(sign === 'ng'){
       if(!formula.includes('-')){
@@ -118,11 +118,11 @@ export default function Calculadora() {
       case("-"): compute = prevV - currv; break;
       case('*'): compute = prevV * currv; break;
       case("÷"): compute = prevV / currv; break;
-      //case("="): setCompute(compute);console.log('pppppp'); break;
+      //case("="): setCompute(compute);console.log('equal ='); break;
       default:break;
     }
     if (operation === '='){
-    console.log('l2aaaaaaaaaaa');
+    //console.log('equal pressed');
     updateDisplay();
     return
   }
@@ -130,7 +130,7 @@ export default function Calculadora() {
     formula= compute.toString();
     setFormula(formula);
     setPrevOperation(operation);
-    console.log(compute,'compute',operation,prevOperation);
+    //console.log(compute,'compute',operation,prevOperation);
   
   }
 
@@ -147,7 +147,7 @@ export default function Calculadora() {
 
 
   const signNumber =()=>{
-   console.log('555');
+   //console.log('-ve value');
    formula= formula.toString();
    setFormula(formula)
    setSign('ng');
